@@ -18,6 +18,10 @@ Le serveur écoute sur le port 5173 et s'attend à appeler un serveur en local s
 
 Voir le **Readme** du projet backend pour en savoir plus sur le fonctionnement du serveur
 
+### Améliorations envisagées
+
+Se connecter par une websocket au serveur pour faire des notifications sans avoir a attendre la réponse du serveur
+
 ### Temps de développement
 
 Une journée puis une autre pour les tests
