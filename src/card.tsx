@@ -78,7 +78,7 @@ export function CardWithForm() {
 
                     if(response.ok) {
                         setStatus(data.finish === true ? 2 : 1);
-                        setProgress(Number((chunkNumber + 1) * chunkProgress));
+                        setProgress(Math.ceil((chunkNumber + 1) * chunkProgress));
                         chunkNumber++;
                         start = end;
                         end = start + chunkSize;
@@ -112,7 +112,9 @@ export function CardWithForm() {
                         className="w-full h-24"
                         fileExtension="csv"
                     />
-                    {(progress > 0 && progress < 100) && <Progress className='p-5' value={progress}/>}
+                    {(progress > 0 && progress < 100) && <div className='p-5'>
+                        <Progress value={progress}/>
+                    </div>}
                 </CardContent>
                 <CardFooter className="flex justify-between">
                     <Button onClick={handleFileUpload} disabled={!file || status === Status.WORKING}>
